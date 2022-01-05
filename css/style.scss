@@ -4,6 +4,7 @@ $secondFonts: Poppins,
 sans-serif;
 $profileFonts: 'Rubik',
 sans-serif;
+$pacifico: 'Pacifico';
 
 @mixin flexCenter {
 	display: flex;
@@ -323,22 +324,108 @@ body {
 }
 
 .popup-container {
+	padding: 80px;
+	position: relative;
 	width: 100%;
 	max-width: 1000px;
-	max-height: 1000px;
-	height: 1000px;
+	max-height: 1300px;
+	height: 1300px;
 	background-color: white;
 	margin: 50px;
 	box-shadow: 0 0 10px black,
 		0 0 30px black;
+	display: flex;
+	flex-direction: column;
 
 	.popup_title {
 		text-align: center;
-		margin-top: 70px;
+		margin-top: 10px;
 		text-transform: uppercase;
-		color: $second-color;
+		color: black;
 		font-family: $profileFonts;
 		font-size: 2em;
-		letter-spacing: 2px;
+		letter-spacing: 15px;
+		margin-bottom: 100px;
+		font-weight: 700;
+	}
+
+	.popup_box {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+
+		.popup_project {
+			width: 100%;
+			height: 25%;
+			margin-bottom: 10px;
+			padding-bottom: 100px;
+			display: grid;
+			grid-template-columns: 1fr 2fr;
+			border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+
+			&:first-child {
+				.popup-project_img-box {
+					background-color: #299B01;
+					font-family: $pacifico;
+					color: white;
+					font-size: 2.2em;
+					@include flexCenter;
+					border-radius: 50px;
+					box-shadow: 0 0 10px #299B01,
+						0 0 20px #299B01
+				}
+			}
+
+			.popup-project_img-box {
+				position: relative;
+				height: 100%;
+				width: 100%;
+
+				&:hover {
+					:before {
+						opacity: 1;
+						transition: opacity 0.5s ease;
+					}
+				}
+
+				:before {
+					content: 'View';
+					position: absolute;
+					background-color: $second-color;
+					width: 100px;
+					height: 100px;
+					left: 50%;
+					top: 50%;
+					transform: translate(-50%, -50%);
+					border-radius: 50%;
+					font-size: 0.8em;
+					@include flexCenter;
+					opacity: 0;
+				}
+			}
+
+			.popup-project_text-box {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				padding-left: 70px;
+
+				.text-box_title {
+					color: $second-color;
+					font-family: $profileFonts;
+					margin-bottom: 10px;
+				}
+
+				.text-box_desc {
+					margin-left: 50px;
+					font-family: $profileFonts;
+					line-height: 1.8em;
+					font-size: 0.8em;
+					text-align: left;
+				}
+			}
+		}
 	}
 }
