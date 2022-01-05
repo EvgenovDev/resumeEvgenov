@@ -391,8 +391,7 @@ body {
   position: relative;
   width: 100%;
   max-width: 1000px;
-  max-height: 1300px;
-  height: 1300px;
+  max-height: 5000px;
   background-color: white;
   margin: 50px;
   -webkit-box-shadow: 0 0 10px black, 0 0 30px black;
@@ -406,6 +405,12 @@ body {
           flex-direction: column;
 }
 
+@media (max-width: 500px) {
+  .popup-container {
+    padding: 10px;
+  }
+}
+
 .popup-container .popup_title {
   text-align: center;
   margin-top: 10px;
@@ -416,6 +421,12 @@ body {
   letter-spacing: 15px;
   margin-bottom: 100px;
   font-weight: 700;
+}
+
+@media (max-width: 1000px) {
+  .popup-container .popup_title {
+    font-size: 1.5em;
+  }
 }
 
 .popup-container .popup_box {
@@ -434,13 +445,28 @@ body {
 .popup-container .popup_box .popup_project {
   width: 100%;
   height: 25%;
-  margin-bottom: 10px;
-  padding-bottom: 100px;
+  margin-top: 20px;
+  padding-bottom: 20px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 2fr;
       grid-template-columns: 1fr 2fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 1000px) {
+  .popup-container .popup_box .popup_project {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .popup-container .popup_box .popup_project:first-child .popup-project_img-box {
@@ -462,10 +488,97 @@ body {
           box-shadow: 0 0 10px #299B01, 0 0 20px #299B01;
 }
 
+.popup-container .popup_box .popup_project:nth-child(2) .popup-project_img-box {
+  background-color: #706257;
+  font-family: "Pacifico";
+  color: white;
+  font-size: 2.2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50px;
+  -webkit-box-shadow: 0 0 10px #706257, 0 0 20px #706257;
+          box-shadow: 0 0 10px #706257, 0 0 20px #706257;
+}
+
+.popup-container .popup_box .popup_project:nth-child(3) .popup-project_img-box {
+  background-color: #273F6F;
+  font-family: "Pacifico";
+  color: white;
+  font-size: 2.2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50px;
+  -webkit-box-shadow: 0 0 10px #273F6F, 0 0 20px #706257;
+          box-shadow: 0 0 10px #273F6F, 0 0 20px #706257;
+}
+
+.popup-container .popup_box .popup_project:nth-child(4) .popup-project_img-box {
+  background-color: lightblue;
+  font-family: "Pacifico";
+  color: white;
+  font-size: 2.2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50px;
+  -webkit-box-shadow: 0 0 10px lightblue, 0 0 20px #706257;
+          box-shadow: 0 0 10px lightblue, 0 0 20px #706257;
+}
+
+.popup-container .popup_box .popup_project:nth-child(4) .popup-project_img-box a {
+  text-align: center;
+}
+
+.popup-container .popup_box .popup_project:nth-child(5) .popup-project_img-box {
+  background-color: #4682B4;
+  font-family: "Pacifico";
+  color: white;
+  font-size: 2.2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50px;
+  -webkit-box-shadow: 0 0 10px #4682B4, 0 0 20px #706257;
+          box-shadow: 0 0 10px #4682B4, 0 0 20px #706257;
+}
+
 .popup-container .popup_box .popup_project .popup-project_img-box {
   position: relative;
-  height: 100%;
+  height: 200px;
   width: 100%;
+}
+
+@media (max-width: 1000px) {
+  .popup-container .popup_box .popup_project .popup-project_img-box {
+    width: 300px;
+    margin-bottom: 40px;
+  }
 }
 
 .popup-container .popup_box .popup_project .popup-project_img-box:hover :before {
@@ -512,10 +625,22 @@ body {
   padding-left: 70px;
 }
 
+@media (max-width: 1000px) {
+  .popup-container .popup_box .popup_project .popup-project_text-box {
+    padding: 0;
+  }
+}
+
 .popup-container .popup_box .popup_project .popup-project_text-box .text-box_title {
   color: #FE0058;
   font-family: "Rubik", sans-serif;
   margin-bottom: 10px;
+}
+
+@media (max-width: 1000px) {
+  .popup-container .popup_box .popup_project .popup-project_text-box .text-box_title {
+    text-align: center;
+  }
 }
 
 .popup-container .popup_box .popup_project .popup-project_text-box .text-box_desc {
@@ -524,5 +649,49 @@ body {
   line-height: 1.8em;
   font-size: 0.8em;
   text-align: left;
+}
+
+@media (max-width: 1000px) {
+  .popup-container .popup_box .popup_project .popup-project_text-box .text-box_desc {
+    margin: 0;
+  }
+}
+
+.popup-container .popup_box .popup_button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 70px;
+}
+
+.popup-container .popup_box .popup_button .button_text {
+  padding: 30px;
+  background-color: #FE0058;
+  border: 1px solid #FE0058;
+  border-radius: 10px;
+  color: white;
+  font-family: "Rubik", sans-serif;
+  font-size: 1.5em;
+  cursor: pointer;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+@media (max-width: 800px) {
+  .popup-container .popup_box .popup_button .button_text {
+    font-size: 1em;
+  }
+  .popup-container .popup_box .popup_button .button_text:hover {
+    font-size: 1.2em;
+  }
+}
+
+.popup-container .popup_box .popup_button .button_text:hover {
+  color: #FE0058;
+  font-size: 1.7em;
+  background-color: transparent;
 }
 /*# sourceMappingURL=style.css.map */
