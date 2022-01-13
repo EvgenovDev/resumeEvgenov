@@ -448,8 +448,9 @@ body .active {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 1000px) {
   .popup-container {
+    margin: 0;
     padding: 40px;
   }
 }
